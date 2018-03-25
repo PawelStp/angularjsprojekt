@@ -1,4 +1,4 @@
-<table width="80%" align="center">
+<table align="center">
     <div id="head_nav">
         <tr>
             <th>Time</th>
@@ -12,64 +12,49 @@
     </div>
 
     <tr>
+        <th>8.00-9.00</th>
+
+        <td ng-repeat="activites in $ctrl.schoolActivites[0]">{{activites.name}}</td>
+    </tr>
+
+    <tr>
         <th>10:00 - 11:00</th>
+        <td ng-repeat="activites in $ctrl.schoolActivites[1]">{{activites.name}}</td>
+    </tr>
 
+    <tr>
+        <th>11:00 - 12:00</th>
+
+        <table-row></table-row>
+        <td>Math-2</td>
+        <td>Chemestry-2</td>
         <td>Physics-1</td>
+        <td>Hindi</td>
         <td>English</td>
-        <td title="No Class" class="Holiday"></td>
-        <td>Chemestry-1</td>
-        <td>Alzebra</td>
-        <td>Physical</td>
-        </div>
+        <td>Soft Skill</td>
+
     </tr>
 
     <tr>
-        <th>11:00 - 12:00</td>
+        <th>12:00 - 13:00</th>
 
-            <td>Math-2</td>
-            <td>Chemestry-2</td>
-            <td>Physics-1</td>
-            <td>Hindi</td>
-            <td>English</td>
-            <td>Soft Skill</td>
-            </div>
+        <td>Math-2</td>
+        <td>Chemestry-2</td>
+        <td>Physics-1</td>
+        <td>Hindi</td>
+        <td>English</td>
+        <td>Soft Skill</td>
+
     </tr>
 
     <tr>
-        <th>12:00 - 01:00</td>
+        <th>14:00 - 15:00</th>
 
-            <td>Hindi</td>
-            <td>English</td>
-            <td>Math-1</td>
-            <td>Chemistry</td>
-            <td>Physics</td>
-            <td>Chem.Lab</td>
-
-            </div>
-    </tr>
-
-    <tr>
-        <th>01:00 - 02:00</td>
-
-            <td>Cumm. Skill</td>
-            <td>Sports</td>
-            <td>English</td>
-            <td>Computer Lab</td>
-            <td>Header</td>
-            <td>Header</td>
-
-            </div>
-    </tr>
-
-    <tr>
-        <th>02:00 - 03:00</td>
-
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            <td>Header</td>
-            </div>
+        <td>Header</td>
+        <td>Header</td>
+        <td>Header</td>
+        <td>Header</td>
+        <td>Header</td>
+        <td>Header</td>
     </tr>
 </table>
