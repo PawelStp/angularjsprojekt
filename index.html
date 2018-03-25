@@ -6,16 +6,57 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
+    <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/app.css"></link>
+    <link rel="stylesheet" type="text/css" href="css/site.css"></link>
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/routing.js"></script>
+    <script src="js/components.js"></script>
 </head>
 
-<body >
-    <div class=ng-view>
-    </div>
+<body>
+
+    <div class="wrapper">
+
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Plan zajec</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="!#/home" data-toggle="collapse" aria-expanded="false">Tygodniowy</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div id="content" class="container col-md-10">
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" id="sidebarCollapse" class="navbar-btn">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="container body-content" ng-view></div>
+        </div>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                    $(this).toggleClass('active');
+                });
+            });
+        </script>
 </body>
 
 </html>
