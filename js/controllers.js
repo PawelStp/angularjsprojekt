@@ -1,5 +1,5 @@
 angular.module('starter.controllers', [])
 
-    .controller('regController', function ($scope) {
-        console.log('This is Add new order screen');
+    .controller('homeController', function ($scope) {
+       alert("home");
     })
