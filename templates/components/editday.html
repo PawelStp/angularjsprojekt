@@ -1,0 +1,32 @@
+<tr>
+    <th style="width: 10% !important;">{{$ctrl.editable.day}}</th>
+    <td style="width: 10% !important;" ng-repeat="schedule in $ctrl.editable.schedule track by $index">
+        <input ng-model="schedule.Activity"></input>
+    </td>
+    <!-- <td>
+        <button class="btn btn-danger" ng-click="openEdit(Friday.Schedule,'Friday')">Edit</button>
+    </td> -->
+</tr>
+
+<table ng-init="schedule">
+    <tr>
+        <th style="width: 10% !important;">Hour</th>
+        <th style="width: 10% !important;">{{$ctrl.editable.day}}</th>
+    </tr>
+    <tr ng-repeat="schedule in $ctrl.editable.schedule track by $index">
+        <th style="width: 10% !important;">
+            {{schedule.Hour | formatDate}}
+        </th>
+        <td style="width: 10% !important;">
+            <input ng-model="schedule.Activity" first-letter-to-upper></input>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button ng-click="cancel()" class="btn btn-warning">Cancel</button>
+        </td>
+        <td>
+            <button ng-click="submitEdit($ctrl.editable)" class="btn btn-success">Submit</button>
+        </td>
+    </tr>
+</table>

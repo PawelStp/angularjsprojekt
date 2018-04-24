@@ -14,3 +14,10 @@ mainApp
             group: '='
         }
     })
+    .component('editday', {
+        templateUrl: 'templates/components/editday.html',
+        controller: "editdayController",
+        bindings: {
+            editable: '=',
+        }
+    })

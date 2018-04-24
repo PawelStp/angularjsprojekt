@@ -1,0 +1,15 @@
+<div class="text-center">
+    <h1 style="margin-bottom: 30px;">Choose group</h1>
+</div>
+<table>
+    <tr>
+        <th>Group</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="group in groups">
+        <td>{{group}}</td>
+        <td>
+            <a class="btn btn-info" ng-href="#!editSchedule/{{group}}">Edit</a>
+        </td>
+    </tr>
+</table>

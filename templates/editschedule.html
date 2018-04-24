@@ -1,0 +1,47 @@
+<table align="center">
+    <div id="head_nav">
+        <tr>
+            <th style="width: 10% !important;">Hour</th>
+            <th ng-repeat="hour in hours">{{hour}}</th>
+        </tr>
+    </div>
+    <tr>
+        <th style="width: 10% !important;">Monday</th>
+        <td style="width: 10% !important;" ng-repeat="schedule in Monday.Schedule track by $index">{{schedule.Activity | break | uppercase}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="openEdit(Monday.Schedule,'Monday')">Edit</button>
+        </td>
+    </tr>
+    <tr>
+        <th style="width: 10% !important;">Tuesday</th>
+        <td style="width: 10% !important;" ng-repeat="schedule in Tuesday.Schedule track by $index">{{schedule.Activity | break | uppercase}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="openEdit(Tuesday.Schedule,'Tuesday')">Edit</button>
+        </td>
+    </tr>
+    <tr>
+        <th style="width: 10% !important;">Wednesday</th>
+        <td style="width: 10% !important;" ng-repeat="schedule in Wednesday.Schedule track by $index">{{schedule.Activity | break | uppercase}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="openEdit(Wednesday.Schedule,'Wednesday')">Edit</button>
+        </td>
+    </tr>
+    <tr>
+        <th style="width: 10% !important;">Thursday</th>
+        <td style="width: 10% !important;" ng-repeat="schedule in Thursday.Schedule track by $index">{{schedule.Activity | break | uppercase}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="openEdit(Thursday.Schedule,'Thursday')">Edit</button>
+        </td>
+    </tr>
+    <tr>
+        <th style="width: 10% !important;">Friday</th>
+        <td style="width: 10% !important;" ng-repeat="schedule in Friday.Schedule track by $index">{{schedule.Activity | break | uppercase}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="openEdit(Friday.Schedule,'Friday')">Edit</button>
+        </td>
+    </tr>
+</table>
+
+<div ng-if="edit">
+    <editday editable="editable"></editday>
+</div>

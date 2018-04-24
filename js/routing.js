@@ -19,6 +19,14 @@ mainApp.config(['$routeProvider',
                 templateUrl: '/templates/deletegroup.html',
                 controller: 'deletegroupController'
             })
+            .when('/editSchedule', {
+                templateUrl: '/templates/edit.html',
+                controller: 'editController'
+            })
+            .when('/editSchedule/:group', {
+                templateUrl: '/templates/editschedule.html',
+                controller: 'editScheduleController'
+            })
             .otherwise({
                 redirectTo: '/home',
             });
