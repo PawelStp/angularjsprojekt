@@ -1,0 +1,13 @@
+<h1 style="margin-bottom: 30px;">Delete group</h1>
+<table>
+    <tr>
+        <th>Group</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="group in groups">
+        <td>{{group}}</td>
+        <td>
+            <button class="btn btn-danger" ng-click="delete(group)">DELETE</button>
+        </td>
+    </tr>
+</table>

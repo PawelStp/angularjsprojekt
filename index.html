@@ -17,9 +17,10 @@
     <script src="js/controllers.js"></script>
     <script src="js/routing.js"></script>
     <script src="js/components.js"></script>
+    <script src="js/filters.js"></script>
 </head>
 
-<body>
+<body ng-controller="main">
 
     <div class="wrapper">
 
@@ -29,7 +30,41 @@
             </div>
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="!#/home" data-toggle="collapse" aria-expanded="false">Tygodniowy</a>
+                    <a href="#!home" data-toggle="collapse" aria-expanded="false">Week Schedule</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a>Group</a>
+                    <ul class=" list-unstyled" id="groupsSubmenu">
+                        <li ng-repeat="group in groups">
+                            <a ng-href="#!group/{{group}}" data-toggle="collapse" aria-expanded="false">Group {{group}}</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a>Day</a>
+                    <ul class=" list-unstyled" id="groupsSubmenu">
+                        <li>
+                            <a ng-href="#!day/Monday" data-toggle="collapse" aria-expanded="false">Monday</a>
+                            <a ng-href="#!day/Tuesday" data-toggle="collapse" aria-expanded="false">Tuesday</a>
+                            <a ng-href="#!day/Wednesday" data-toggle="collapse" aria-expanded="false">Wednesday</a>
+                            <a ng-href="#!day/Thursday" data-toggle="collapse" aria-expanded="false">Thursday</a>
+                            <a ng-href="#!day/Friday" data-toggle="collapse" aria-expanded="false">Friday</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#!addgroup" data-toggle="collapse" aria-expanded="false">Add group</a>
+                </li>
+            </ul>
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#!deletegroup" data-toggle="collapse" aria-expanded="false">Delete group</a>
                 </li>
             </ul>
         </nav>

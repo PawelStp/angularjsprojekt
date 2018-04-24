@@ -1,0 +1,46 @@
+<div ng-show="render">
+    <div class="text-center">
+        <h1>{{$ctrl.day}}</h1>
+    </div>
+    <table align="center">
+        <div id="head_nav">
+            <tr>
+                <th>Group</th>
+                <th ng-repeat="group in $ctrl.groups">{{group}}</th>
+            </tr>
+        </div>
+        <tr>
+            <th>8.00-9.00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[0].Activities track by $index">{{activities | break | uppercase }}</td>
+        </tr>
+        <tr>
+            <th>9:00 - 10.00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[1].Activities track by $index">{{activities | break | uppercase}}</td>
+        </tr>
+        <tr>
+            <th>10:00 - 11:00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[2].Activities track by $index">{{activities | break | uppercase}}</td>
+        </tr>
+        <tr>
+            <th>11:00 - 12:00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[3].Activities track by $index">{{activities | break | uppercase}}</td>
+        </tr>
+
+        <tr>
+            <th>12:00 - 13:00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[4].Activities track by $index">{{activities | break | uppercase}}</td>
+        </tr>
+        <tr>
+            <th>13:00 - 14:00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[5].Activities track by $index">{{activities | break | uppercase}}</td>
+        </tr>
+        <tr>
+            <th>14:00 - 15:00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[6].Activities track by $index">{{activities | break | uppercase}}</td>
+        </tr>
+        <tr>
+            <th>15:00 - 16:00</th>
+            <td ng-repeat="activities in $ctrl.Schedule.Schedule[7].Activities track by $index">{{activities | break | uppercase}}</td>
+        </tr>
+    </table>
+</div>

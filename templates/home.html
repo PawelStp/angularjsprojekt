@@ -1,60 +1,15 @@
-<table align="center">
-    <div id="head_nav">
-        <tr>
-            <th>Time</th>
-            <th>Monday</th>
-            <th>Tuesday</th>
-            <th>Wednesday</th>
-            <th>Thrusday</th>
-            <th>Friday</th>
-            <th>Saturday</th>
-        </tr>
-    </div>
-
-    <tr>
-        <th>8.00-9.00</th>
-
-        <td ng-repeat="activites in $ctrl.schoolActivites[0]">{{activites.name}}</td>
-    </tr>
-
-    <tr>
-        <th>10:00 - 11:00</th>
-        <td ng-repeat="activites in $ctrl.schoolActivites[1]">{{activites.name}}</td>
-    </tr>
-
-    <tr>
-        <th>11:00 - 12:00</th>
-
-        <table-row></table-row>
-        <td>Math-2</td>
-        <td>Chemestry-2</td>
-        <td>Physics-1</td>
-        <td>Hindi</td>
-        <td>English</td>
-        <td>Soft Skill</td>
-
-    </tr>
-
-    <tr>
-        <th>12:00 - 13:00</th>
-
-        <td>Math-2</td>
-        <td>Chemestry-2</td>
-        <td>Physics-1</td>
-        <td>Hindi</td>
-        <td>English</td>
-        <td>Soft Skill</td>
-
-    </tr>
-
-    <tr>
-        <th>14:00 - 15:00</th>
-
-        <td>Header</td>
-        <td>Header</td>
-        <td>Header</td>
-        <td>Header</td>
-        <td>Header</td>
-        <td>Header</td>
-    </tr>
-</table>
+<div class="dayschedule">
+    <dayschedule day="monday"></dayschedule>
+</div>
+<div class="dayschedule">
+    <dayschedule day="tuesday"></dayschedule>
+</div>
+<div class="dayschedule">
+    <dayschedule day="wednesday"></dayschedule>
+</div>
+<div class="dayschedule">
+    <dayschedule day="thursday"></dayschedule>
+</div>
+<div class="dayschedule">
+    <dayschedule day="friday"></dayschedule>
+</div>

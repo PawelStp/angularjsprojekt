@@ -1,5 +1,16 @@
 mainApp
-    .component('home', {
-        templateUrl: 'templates/home.html',
-        controller: 'homeController'
+    .component('dayschedule', {
+        templateUrl: 'templates/components/dayschedule.html',
+        controller: "dayschedule",
+        bindings: {
+            day: '='
+        }
+    })
+    .component('groupdayschedule', {
+        templateUrl: 'templates/components/groupdayschedule.html',
+        controller: "groupdayschedule",
+        bindings: {
+            day: '=',
+            group: '='
+        }
     })

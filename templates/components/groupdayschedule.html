@@ -1,0 +1,15 @@
+<div class="text-center"  ng-show="canSee">
+    <h1>Grupa {{group}}</h1>
+</div>
+<table align="center" ng-show="render">
+    <div id="head_nav">
+        <tr ng-show="canSee">
+            <th style="width: 11% !important;">Hour</th>
+            <th ng-repeat="hour in $ctrl.hours">{{hour}}</th>
+        </tr>
+    </div>
+    <tr>
+        <th style="width: 11% !important;">{{$ctrl.day}}</th>
+        <td style="width: 11% !important;" ng-repeat="schedule in $ctrl.Schedule.Schedule track by $index">{{schedule.Activity | break | uppercase}}</td>
+    </tr>
+</table>
