@@ -1,47 +1,8 @@
 angular.module('starter.controllers', [])
-    .controller('main', function ($scope, $http) {
-
-        $scope.monday = "Monday"
-        $scope.tuesday = "Tuesday"
-        $scope.wednesday = "Wednesday"
-        $scope.thursday = "Thursday"
-        $scope.friday = "Friday"
-
-        $scope.getGroups = function () {
-            $http.get("http://angularjschedule.azurewebsites.net/api/get/groups")
-                .then(function (response) {
-                    $scope.groups = response.data;
-                });
-        };
-
-        $scope.getGroups();
-    })
 
     .controller('dayschedule', function ($scope, $http, $timeout) {
-
         var self = this;
-        $scope.render = false;
-
-        $scope.getGroups = function () {
-            $http.get("http://angularjschedule.azurewebsites.net/api/get/groups")
-                .then(function (response) {
-                    self.groups = response.data;
-                    $scope.getSchedule();
-                });
-        };
-
-        $scope.getSchedule = function () {
-            $http.get("http://angularjschedule.azurewebsites.net/api/get/schedule/" + self.day)
-                .then(function (response) {
-                    self.Schedule = response.data;
-                });
-        };
-        $scope.getGroups();
-
-        var renderUp = function () {
-            $scope.render = true;
-        }
-        $timeout(renderUp, 350);
+   
     })
 
     .controller('groupdayschedule', function ($scope, $http, $route, $routeParams, $timeout) {
@@ -90,17 +51,18 @@ angular.module('starter.controllers', [])
         $scope.day = $routeParams.day;
     })
 
-    .controller('addgroupController', function ($scope, $http, $filter) {
+    .controller('addgroupController', function ($scope, $http, $filter, $window) {
 
         $scope.addGroup = function (newGroup) {
             $http.post("http://angularjschedule.azurewebsites.net/api/groups/add/", { name: newGroup })
                 .then(function (response) {
+                    $window.location.reload();
                     console.log(response);
                 });
         };
     })
 
-    .controller('deletegroupController', function ($scope, $http, $filter) {
+    .controller('deletegroupController', function ($scope, $http, $filter, $window) {
         $scope.getGroups = function () {
             $http.get("http://angularjschedule.azurewebsites.net/api/get/groups")
                 .then(function (response) {
@@ -111,6 +73,7 @@ angular.module('starter.controllers', [])
             $http.delete("http://angularjschedule.azurewebsites.net/api/delete/group/" + group)
                 .then(function (response) {
                     console.log(response);
+                    $window.location.reload();
                     $scope.getGroups();
                 });
         };
@@ -197,17 +160,65 @@ angular.module('starter.controllers', [])
         }
     })
 
-    .controller('editdayController', function ($scope, $http, $filter, $route) {
+    .controller('editdayController', function ($scope, $http, $filter, $route, $window) {
         var self = this;
 
         $scope.submitEdit = function (editable) {
             $http.put("http://angularjschedule.azurewebsites.net/api/put/schedule", editable)
                 .then(function (response) {
-                    $route.reload();
+                    $window.location.reload();
                 }, function (response) { console.log(response) });
         }
 
         $scope.cancel = function (editable) {
             $route.reload();
         }
+    })
+
+    .controller('resourceController', function ($scope, $http, $filter, $route) {
+        var self = this;
+
+        self.schedule = {};
+        var getGroups = function () {
+            $http.get("http://angularjschedule.azurewebsites.net/api/get/groups")
+                .then(function (response) {
+                    self.groups = response.data;
+                });
+        };
+
+        var getSchedule = function () {
+            $http.get("http://angularjschedule.azurewebsites.net/api/get/schedule/Monday")
+                .then(function (response) {
+                    self.schedule.monday = response.data;
+                });
+
+            $http.get("http://angularjschedule.azurewebsites.net/api/get/schedule/Tuesday")
+                .then(function (response) {
+                    self.schedule.tuesday = response.data;
+                });
+
+            $http.get("http://angularjschedule.azurewebsites.net/api/get/schedule/Wednesday")
+                .then(function (response) {
+                    self.schedule.wednesday = response.data;
+                });
+
+            $http.get("http://angularjschedule.azurewebsites.net/api/get/schedule/Thursday")
+                .then(function (response) {
+                    self.schedule.thursday = response.data;
+                });
+
+            $http.get("http://angularjschedule.azurewebsites.net/api/get/schedule/Friday")
+                .then(function (response) {
+                    self.schedule.friday = response.data;
+                });
+
+        };
+        
+        self.monday = "Monday";
+        self.tuesday = "Tuesday";
+        self.wednesday = "Wednesday";
+        self.thursday = "Thursday";
+        self.friday = "Friday";
+        getSchedule();
+        getGroups();
     })

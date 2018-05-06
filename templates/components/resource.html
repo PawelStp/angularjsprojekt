@@ -1,0 +1,68 @@
+<div class="wrapper">
+
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Plan zajec</h3>
+        </div>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#!home" data-toggle="collapse" aria-expanded="false">Week Schedule</a>
+            </li>
+        </ul>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a>Group</a>
+                <ul class=" list-unstyled" id="groupsSubmenu">
+                    <li ng-repeat="group in $ctrl.groups track by $index">
+                        <a ng-href="#!group/{{group}}" data-toggle="collapse" aria-expanded="false">Group {{group}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a>Day</a>
+                <ul class=" list-unstyled" id="groupsSubmenu">
+                    <li>
+                        <a ng-href="#!day/monday" data-toggle="collapse" aria-expanded="false">Monday</a>
+                        <a ng-href="#!day/tuesday" data-toggle="collapse" aria-expanded="false">Tuesday</a>
+                        <a ng-href="#!day/wednesday" data-toggle="collapse" aria-expanded="false">Wednesday</a>
+                        <a ng-href="#!day/thursday" data-toggle="collapse" aria-expanded="false">Thursday</a>
+                        <a ng-href="#!day/friday" data-toggle="collapse" aria-expanded="false">Friday</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#!editSchedule" data-toggle="collapse" aria-expanded="false">Edit schedule</a>
+            </li>
+        </ul>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#!addgroup" data-toggle="collapse" aria-expanded="false">Add group</a>
+            </li>
+        </ul>
+        <ul class="list-unstyled components">
+            <li class="active">
+                <a href="#!deletegroup" data-toggle="collapse" aria-expanded="false">Delete group</a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <div id="content" class="container col-md-10">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <div class="container body-content" ng-view></div>
+    </div>
+</div>
